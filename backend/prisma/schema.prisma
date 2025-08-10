@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Restaurant {
+  id       Int     @id @default(autoincrement())
+  name     String  @unique
+  logo_url String?
+  status   String  @default("Closed")
+  foods    Food[]
+}
+
+model Food {
+  id        Int     @id @default(autoincrement())
+  name      String
+  price     Float?
+  rating    Float?
+  image_url String?
+
+  restaurant    Restaurant? @relation(fields: [restaurant_id], references: [id], onDelete: Cascade)
+  restaurant_id Int?
+}
