@@ -7,7 +7,8 @@ import Footer from "./components/Footer";
 import AddEditMealModal from "./components/modals/AddEditMealModal";
 import DeleteMealModal from "./components/modals/DeleteMealModal";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL || "http://localhost:5000/api";
 
 function App() {
   const [meals, setMeals] = useState([]);
