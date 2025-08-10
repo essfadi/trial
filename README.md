@@ -60,7 +60,7 @@ Follow these steps to get the project running on your local machine.
 
 ```bash
 # Clone the repository
-git clone <your-repo-link>
+git clone https://github.com/essfadi/trial
 cd food-management-app/backend
 
 # Install dependencies
